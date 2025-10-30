@@ -1,0 +1,19 @@
+# Q2: Write a program to input two numbers and display their sum, difference, product, and quotient.
+# Division by zero should be handled carefully.
+
+# Taking two numbers as input in a single line
+a, b = map(int, input().split())
+
+# Performing calculations
+sum_ = a + b
+diff = a - b
+prod = a * b
+
+# Handling division carefully
+if b != 0:
+    quot = a // b  # integer division as per sample output
+else:
+    quot = "undefined"
+
+# Displaying result in required format
+print(f"Sum={sum_}, Diff={diff}, Product={prod}, Quotient={quot}")
