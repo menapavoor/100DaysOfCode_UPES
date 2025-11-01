@@ -1,22 +1,20 @@
-# Program to find the ceil of x in a sorted array
+# Program to find the majority element in an array
 
-def find_ceil(arr, x):
-    low, high = 0, len(arr) - 1
-    result = -1  # default if no ceil exists
-    
-    while low <= high:
-        mid = (low + high) // 2
-        
-        if arr[mid] >= x:
-            result = mid       # possible ceil found
-            high = mid - 1     # look for earlier occurrence
-        else:
-            low = mid + 1      # move right
-    
-    return result
+# Step 1: Input array
+nums = list(map(int, input("Enter array: ").strip("[]").split(',')))
+n = len(nums)
 
-# ---- Main Program ----
-arr = list(map(int, input("Enter sorted array: ").strip("[]").split(',')))
-x = int(input("Enter x: "))
+# Step 2: Count frequencies
+freq = {}
+for num in nums:
+    freq[num] = freq.get(num, 0) + 1
 
-print(find_ceil(arr, x))
+# Step 3: Check majority condition
+majority = -1
+for key, val in freq.items():
+    if val > n // 2:
+        majority = key
+        break
+
+# Step 4: Output
+print(majority)
