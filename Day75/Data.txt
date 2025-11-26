@@ -1,0 +1,17 @@
+# Q125: Append text to an existing file
+
+file_name = "data.txt"
+
+try:
+    # Step 1: Open file in append mode
+    with open(file_name, "a") as f:
+        # Step 2: Take user input
+        new_line = input("Enter text to append: ")
+        # Step 3: Append with newline
+        f.write("\n" + new_line)
+
+    # Step 4: Confirmation
+    print("File updated successfully with appended text.")
+
+except FileNotFoundError:
+    print(f"Error: Could not open file {file_name}")

@@ -1,0 +1,15 @@
+# Q127: Convert lowercase to uppercase while copying file
+
+input_file = "input.txt"
+output_file = "output.txt"
+
+try:
+    with open(input_file, "r") as infile, open(output_file, "w") as outfile:
+        for line in infile:
+            # Convert entire line to uppercase
+            outfile.write(line.upper())
+
+    print(f"File converted successfully! Output written to {output_file}")
+
+except FileNotFoundError:
+    print(f"Error: Could not open {input_file}")

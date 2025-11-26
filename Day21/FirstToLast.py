@@ -1,0 +1,24 @@
+# Program to swap first and last digit of a number
+
+# Step 1: Input
+num = int(input("Enter a number: "))
+
+# Step 2: Find number of digits
+n = num
+digits = 0
+while n > 0:
+    digits += 1
+    n //= 10
+
+# Step 3: Extract first and last digit
+last = num % 10
+first = num // (10 ** (digits - 1))
+
+# Step 4: Extract middle part
+middle = (num % (10 ** (digits - 1))) // 10
+
+# Step 5: Rebuild number
+swapped = last * (10 ** (digits - 1)) + middle * 10 + first
+
+# Step 6: Output
+print(swapped)

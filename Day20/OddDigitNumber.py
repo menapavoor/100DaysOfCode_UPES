@@ -1,0 +1,20 @@
+# Program to find the product of odd digits of a number
+
+# Step 1: Input
+num = int(input("Enter a number: "))
+
+# Step 2: Initialize product
+product = 1
+has_odd = False
+
+# Step 3: Loop through digits
+n = num
+while n > 0:
+    digit = n % 10
+    if digit % 2 == 1:   # check odd
+        product *= digit
+        has_odd = True
+    n //= 10
+
+# Step 4: Output
+print(product if has_odd else 1)

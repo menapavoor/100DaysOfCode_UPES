@@ -1,0 +1,11 @@
+# Q126: Check if file exists and display content
+
+filename = input("Enter filename: ")
+
+try:
+    with open(filename, "r") as f:
+        print("File opened successfully.")
+        for line in f:
+            print(line.strip())  # strip() removes newline characters
+except FileNotFoundError:
+    print("Error: File does not exist!")
