@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main() {
+    FILE *file;
+    char name[50];
+    int roll, marks;
+
+    // Step 1: Write records to file
+    file = fopen("students.txt", "w");
+    if (file == NULL) {
+        printf("Error opening file for writing!\n");
+        return 1;
+    }
+
+    // Writing two records
+    fprintf(file, "Asha 101 85\n");
+    fprintf(file, "Ravi 102 92\n");
+
+    fclose(file);
+
+    // Step 2: Read records from file
+    file = fopen("students.txt", "r");
+    if (file == NULL) {
+        printf("Error opening file for reading!\n");
+        return 1;
+    }
+
+    printf("Student Records:\n");
+    while (fscanf(file, "%s %d %d", name, &roll, &marks) == 3) {
+        printf("Name: %s | Roll: %d | Marks: %d\n", name, roll, marks);
+    }
+
+    fclose(file);
+    return 0;
+}

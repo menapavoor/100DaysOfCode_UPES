@@ -1,0 +1,8 @@
+# Program to print numbers from 1 to n
+
+# Step 1: Input
+n = int(input("Enter a number: "))
+
+# Step 2: Loop
+for i in range(1, n + 1):
+    print(i, end=" ")

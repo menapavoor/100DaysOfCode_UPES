@@ -1,0 +1,4 @@
+with open("numbers.txt", "r") as file:
+    content = file.read()
+    print("File content:", content)  # Debug
+    numbers = list(map(int, content.split()))
